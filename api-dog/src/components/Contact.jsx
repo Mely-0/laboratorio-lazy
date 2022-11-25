@@ -5,7 +5,7 @@ import { Card } from './Card'
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 
-export const Dogs = () => {
+function Contact () {
 
     const { data, error } = useSWR("https://api.thedogapi.com/v1/images/search?limit=2&page=100&order=DESC", fetcher)
     if (error) return <div>failed to load</div>
@@ -16,4 +16,4 @@ return (
         <Card link={data[1].url}/>
     </div>
 )
-}
+} export default Contact
